@@ -27,10 +27,13 @@ RUN echo "work_mem = 8MB" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "shared_buffers = 512MB" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "random_page_cost = 1.0" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "effective_cache_size = 1024MB" >> /etc/postgresql/12/main/postgresql.conf
-RUN echo "wal_level = minimal" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "maintenance_work_mem = 128MB" >> /etc/postgresql/12/main/postgresql.conf
+RUN echo "wal_level = minimal" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "wal_buffers = 1MB" >> /etc/postgresql/12/main/postgresql.conf
 RUN echo "max_wal_senders = 0" >> /etc/postgresql/12/main/postgresql.conf
+RUN echo "log_statement = none" >> /etc/postgresql/12/main/postgresql.conf
+RUN echo "log_duration = off " >> /etc/postgresql/12/main/postgresql.conf
+RUN echo "log_lock_waits = on" >> /etc/postgresql/12/main/postgresql.conf
 
 EXPOSE 5432
 
